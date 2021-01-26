@@ -1,0 +1,70 @@
+/* ------ CSS3 - Ripple Wave Buttons ------ */
+body {
+    /*
+    background-color: #DFDBE5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%239C92AC' fill-opacity='0.4'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    */
+    background-color: #bee1e8;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='12' viewBox='0 0 20 12'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='charlie-brown' fill='%230b8ba7' fill-opacity='0.4'%3E%3Cpath d='M9.8 12L0 2.2V.8l10 10 10-10v1.4L10.2 12h-.4zm-4 0L0 6.2V4.8L7.2 12H5.8zm8.4 0L20 6.2V4.8L12.8 12h1.4zM9.8 0l.2.2.2-.2h-.4zm-4 0L10 4.2 14.2 0h-1.4L10 2.8 7.2 0H5.8z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+h1 {
+    font-family: 'Piedra', cursive;
+    font-size: 3.5em;
+    text-align: center;
+    margin-top: 300px;
+    color: #0b8ba7;
+    text-shadow: 2px 2px 2px #07596b;
+}
+.container {
+    width: 900px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+}
+button {
+    font-family: Impact;
+    position: relative;
+    width: 250px;
+    height: 80px;
+    border-radius: 10px;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 40px;
+    color: white;
+    filter: drop-shadow(-1px 6px 3px rgba(133, 133, 133, 0.5));
+}
+button::before {
+    content: '';
+    background:#0b8ba7;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+button:hover {
+    animation: squish 0.5s;
+}
+button:hover:before {
+    background: linear-gradient(to right, red, green, blue);
+    filter: url('#wave'); /* blur(10px);  */
+}
+@keyframes squish {
+    0% {
+        transform: scaleY(1);
+    }
+    60% {
+        transform: scaleY(1.5);
+    }
+    80% {
+        transform: scaleY(0.9);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
